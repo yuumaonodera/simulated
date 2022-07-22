@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAttendacesTable extends Migration
+class ChangeAttendacesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateAttendacesTable extends Migration
      */
     public function up()
     {
-        Schema::create('attendaces', function (Blueprint $table) {
-            $table->id();
-            $table->foreignld('user_id')->condtrained();
-            $table->datetime('start_time')->nullable();
-            $table->datetime('end_time')->nullable();
+        Schema::table('attendaces', function (Blueprint $table) {
+            $table->foreignld('user_id')->constrained();
         });
     }
 
@@ -28,6 +25,8 @@ class CreateAttendacesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('attendaces');
+        Schema::table('attendaces', function (Blueprint $table) {
+            $table->integer('user_id');
+        });
     }
 }

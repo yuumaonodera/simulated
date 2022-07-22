@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Attendaces extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['user_id', 'start_time', 'end_time'];
 }

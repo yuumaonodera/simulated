@@ -16,10 +16,10 @@ class CreateBreaktimesTable extends Migration
         Schema::create('breaktimes', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->user_id();
-            $table->attendaces_id();
-            $table->start_time('datetime')->nullabel();
-            $table->end_time('datetime')->nullabel();
+            $table->foreignld('user_id')->condtrained();
+            $table->foreignld('attendaces_id')->condtrained();
+            $table->datetime('start_time')->nullabel();
+            $table->datetime('end_time')->nullabel();
         });
     }
 
