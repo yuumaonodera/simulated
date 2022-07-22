@@ -15,22 +15,78 @@
     .title {
       display:flex;
       background-color:white;
-    }
-    .button-one {
-      display:flex;
-    }
-    .button-two {
-      display:flex;
+      padding-top:12px;
+      padding-bottom:12px;
+      padding-left:35px;
     }
     a {
       text-decoration:none;
       color:black;
     }
     .direction {
-      margin-left:60%;
+      margin-left:66%;
+      margin-top:30px;
+      font-weight:bold;
+    }
+    .date {
+      margin-left:50px;
+    }
+    .login {
+      margin-left:50px;
     }
     .small_title {
       background-color:white;
+    }
+    .small_title {
+      text-align:center;
+    }
+    .button-one {
+      display:flex;
+    }
+    .name {
+      text-align:center;
+      margin-top:30px;
+      margin-bottom:30px;
+    }
+    .button-small-1 {
+      width:400px;
+      height:200px;
+      font-size:20px;
+      font-weight:bold;
+      border:none;
+      background-color:white;
+      margin-left:320px;
+    }
+    .button-small-2 {
+      width:400px;
+      height:200px;
+      font-size:20px;
+      font-weight:bold;
+      border:none;
+      background-color:white;
+      margin-left:50px;
+    }
+    .button-small-3 {
+      width:400px;
+      height:200px;
+      font-size:20px;
+      font-weight:bold;
+      border:none;
+      background-color:white;
+      margin-left:320px;
+    }
+    .button-two {
+      margin-top:40px;
+      margin-bottom:12%;
+    }
+    .button-small-4 {
+      width:400px;
+      height:200px;
+      font-size:20px;
+      font-weight:bold;
+      border:none;
+      background-color:white;
+      margin-left:48px;
     }
   </style>
   <div class="title">
@@ -41,13 +97,16 @@
        <a href="/login" class="login">ログアウト</a>
     </div>
   </div>
+  <div class="name">
+    <h2>さんお疲れ様です。</h2>
+  </div>
   <div class="button-one">
-    <button>勤務開始</button>
-    <button>勤務終了</button>
+      <button class="button-small-1">勤務開始</button>
+      <button class="button-small-2">勤務終了</button>
   </div>
   <div class="button-two">
-    <button>休憩開始</button>
-    <button>休憩終了</button>
+    <button class="button-small-3">休憩開始</button>
+    <button class="button-small-4">休憩終了</button>
   </div>
   <div class="small_title">
    <small>Atte,inc</small>

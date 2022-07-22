@@ -30,22 +30,28 @@
     }
     .meal {
       text-align:center;
+      margin-top:10px;
     }
     .password {
       text-align:center;
+      margin-top:20px;
     }
     .login {
       text-align:center;
+      margin-top:18px;
     }
     .no {
       text-align:center;
       font-size:13px;
+      margin-top:9px;
     }
     .register {
       text-align:center;
+      margin-bottom:462px;
     }
-    h4 {
+    h3 {
       text-align:center;
+      margin-top:60px;
     }
     button {
       padding-left:147px;
@@ -69,11 +75,15 @@
       text-decoration:none;
     }
   </style>
+  @section('login.blade.php')
+  @if(Login::check())
+  <p>ログインしてください(<a href="/login">ログイン</a><a href="/register">登録</a>)</p>
+  @endif
   <div class="title">
     <h1>Atte</h1>
   </div>
   <div class="sub-title">
-    <h4>ログイン</h4>
+    <h3>ログイン</h3>
   </div>
   <div class="meal">
     <input type="text" placeholder="メールアドレス" size="45px">
@@ -93,6 +103,7 @@
   <div class="small_title">
     <small>Atte,inc</small>
   </div>
+  @endsection
 </body>
 
 </html>

@@ -10,7 +10,7 @@ class RegisterController extends Controller
     public function index()
     {
         $item = Register::all();
-        return view('register');
+        return view('/register');
     }
     public function create(Request $request)
     {

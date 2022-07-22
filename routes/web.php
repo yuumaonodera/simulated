@@ -23,6 +23,7 @@ Route::get('/login', function () {
 
 Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'create']);
+Route::post('/login', [LoginController::class, 'checkUser']);
 
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'create']);
@@ -30,5 +31,12 @@ Route::post('/register', [RegisterController::class, 'create']);
 Route::get('/stamp', [StampController::class, 'index']);
 Route::post('/stamp', [StampController::class, 'create']);
 
-Route::get('/date', [DateController::class, 'index']);
+Route::get('/date', [DateController::class, 'index'])->middleware('auth');
 Route::post('/date', [DateController::class, 'create']);
+
+Route::get('/dashboard', function () {
+    return view('dasaboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
+

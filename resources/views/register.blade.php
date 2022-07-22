@@ -29,6 +29,7 @@
     }
     .sub-title {
       text-align:center;
+      margin-top:50px;
     }
     .name {
       text-align:center;
@@ -44,16 +45,20 @@
     }
     .register {
       text-align:center;
+      margin-top:18px;
     }
     .small {
       text-align:center;
       font-size:13px;
+      margin-top:18px;
     }
     .login {
       text-align:center;
+      margin-bottom:12%;
     }
     .small_title {
       text-align:center;
+      margin-top:322px;
     }
     .member {
       padding-left:147px;
@@ -69,6 +74,7 @@
       height:35px;
       border-radius:4px;
       border:1px solid gray;
+      margin-top:18px;
     }
     a {
       text-decoration:none;
