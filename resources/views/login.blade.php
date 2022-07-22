@@ -76,9 +76,6 @@
     }
   </style>
   @section('login.blade.php')
-  @if(Login::check())
-  <p>ログインしてください(<a href="/login">ログイン</a><a href="/register">登録</a>)</p>
-  @endif
   <div class="title">
     <h1>Atte</h1>
   </div>

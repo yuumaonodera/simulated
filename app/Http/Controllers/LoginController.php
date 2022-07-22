@@ -10,8 +10,7 @@ class LoginController extends Controller
     public function index()
     {
         $item = Login::all();
-        $user = Login::user();
-        $param = ['item' => $item, 'user' => $user];
+        $param = ['item' => $item];
         return view('/login', $param);
     }
     public function create(Request $request)

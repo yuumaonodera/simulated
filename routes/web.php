@@ -17,7 +17,7 @@ use App\Http\Controllers\DateController;
 |
 */
 
-Route::get('/login', function () {
+Route::get('/', function () {
     return view('welcome');
 });
 
@@ -34,9 +34,4 @@ Route::post('/stamp', [StampController::class, 'create']);
 Route::get('/date', [DateController::class, 'index'])->middleware('auth');
 Route::post('/date', [DateController::class, 'create']);
 
-Route::get('/dashboard', function () {
-    return view('dasaboard');
-})->middleware(['auth'])->name('dashboard');
-
-require __DIR__.'/auth.php';
 
