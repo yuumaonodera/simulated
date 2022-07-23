@@ -11,23 +11,21 @@ class LoginController extends Controller
     {
         $item = Login::all();
         $param = ['item' => $item];
+        dd($item);
         return view('/login', $param);
     }
     public function create(Request $request)
     {
         $form = $request->all();
         Login::create($form);
+        dd($form);
         return redirect('/login');
     }
     public function checkUser(Request $request)
     {
         $email = $request->email;
         $password = $request->password;
-        if(Login::attempt(['email' => $email, 'password' => $password])) {
-            $text = Login::user()->name. 'さんお疲れ様です';
-        } else {
-            $text = 'ログインに失敗しました';
-        }
-        return view('login', ['text'=>$text]);
+        dd($email,$password);
+        return view('login');
     }
 }

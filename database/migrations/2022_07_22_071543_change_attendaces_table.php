@@ -15,6 +15,8 @@ class ChangeAttendacesTable extends Migration
     {
         Schema::table('attendaces', function (Blueprint $table) {
             $table->foreignld('user_id')->constrained();
+            $table->dateTime('start_time')->nullable();
+            $table->dateTime('end_time')->nullble();
         });
     }
 

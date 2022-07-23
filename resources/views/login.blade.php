@@ -75,7 +75,6 @@
       text-decoration:none;
     }
   </style>
-  @section('login.blade.php')
   <div class="title">
     <h1>Atte</h1>
   </div>
@@ -100,7 +99,6 @@
   <div class="small_title">
     <small>Atte,inc</small>
   </div>
-  @endsection
 </body>
 
 </html>

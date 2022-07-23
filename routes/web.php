@@ -31,7 +31,7 @@ Route::post('/register', [RegisterController::class, 'create']);
 Route::get('/stamp', [StampController::class, 'index']);
 Route::post('/stamp', [StampController::class, 'create']);
 
-Route::get('/date', [DateController::class, 'index'])->middleware('auth');
+Route::get('/date', [DateController::class, 'index']);
 Route::post('/date', [DateController::class, 'create']);
 
 

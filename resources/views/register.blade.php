@@ -86,27 +86,30 @@
   <div class="sub-title">
     <h2>会員登録</h2>
   </div>
-  <div class="name">
-    <input type="text" placeholder="名前" size="45px">
-  </div>
-  <div class="meal">
-    <input type="text" placeholder="メールアドレス" size="45px">
-  </div>
-  <div class="password">
-    <input type="text" placeholder="パスワード" size="45px">
-  </div>
-  <div class="check">
-    <input type="text" placeholder="確認用パスワード" size="45px">
-  </div>
-  <div class="register">
-    <button class="member">会員登録</button>
-  </div>
-  <div class="small">
-    <p>アカウントをお持ちの方はこちらから</p>
-  </div>
-  <div class="login">
-    <a href="/login">ログイン</a>
-  </div>
+  <form action="/login" method="POST">
+    @csrf
+   <div class="name">
+     <input type="text" placeholder="名前" name="name" size="45px">
+   </div>
+   <div class="meal">
+     <input type="text" name="email" placeholder="メールアドレス" size="45px">
+   </div>
+   <div class="password">
+     <input type="text" name="password" placeholder="パスワード" size="45px">
+   </div>
+   <div class="check">
+     <input type="text" name="check" placeholder="確認用パスワード" size="45px">
+   </div>
+   <div class="register">
+     <input type="submit" value="送信">
+   </div>
+   <div class="small">
+     <p>アカウントをお持ちの方はこちらから</p>
+   </div>
+   <div class="login">
+     <a href="/login">ログイン</a>
+   </div>
+  </form>
   <div class="small_title">
     <small>Atte,inc</small>
   </div>
