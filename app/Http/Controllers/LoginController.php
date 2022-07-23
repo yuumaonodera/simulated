@@ -11,21 +11,20 @@ class LoginController extends Controller
     {
         $item = Login::all();
         $param = ['item' => $item];
-        dd($item);
         return view('/login', $param);
     }
     public function create(Request $request)
     {
         $form = $request->all();
         Login::create($form);
-        dd($form);
         return redirect('/login');
     }
     public function checkUser(Request $request)
     {
+        $name = $request->name;
         $email = $request->email;
         $password = $request->password;
-        dd($email,$password);
+        $check = $request->check;
         return view('login');
     }
 }

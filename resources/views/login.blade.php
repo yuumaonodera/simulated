@@ -53,14 +53,10 @@
       text-align:center;
       margin-top:60px;
     }
-    button {
-      padding-left:147px;
-      padding-right:147px;
-      background-color:blue;
-      border:none;
-      border-radius:4px;
-      padding-top:8px;
-      padding-bottom:8px;
+    .who{
+      text-align:center;
+      width:350px;
+      margin-left:38.5%;
     }
     .hu {
       text-decoration:none;
@@ -73,32 +69,37 @@
     }
     a {
       text-decoration:none;
+      text-align:center;
+    }
+    .login {
+      text-align:center;
     }
   </style>
   <div class="title">
     <h1>Atte</h1>
   </div>
-  <div class="sub-title">
-    <h3>ログイン</h3>
-  </div>
-  <div class="meal">
-    <input type="text" placeholder="メールアドレス" size="45px">
-  </div>
-  <div class="password">
-    <input type="text" placeholder="パスワード" size="45px">
-  </div>
-  <div class="login">
-    <button><a href="/stamp" class="hu">ログイン</a></button>
-  </div>
-  <div class="no">
-    <p>アカウントをお持ちでない方はこちらから</p>
-  </div>
-  <div class="register">
+  <form action="/stamp" methid="POST">
+    @csrf
+    <div class="subtitle">
+      <h3>ログイン</h3>
+    </div>
+    <div class="meal">
+      <input type="text" name="email" placeholder="メールアドレス" size="45px">
+    </div>
+    <div class="password">
+      <input type="text" name="password" placeholder="パスワード" size="45px">
+   </div>
+   <div class="no">
+    <h4>アカウントをお持ちでない方はこちらから</h4>
+   </div>
+   <div class="login">
     <a href="/register">会員登録</a>
-  </div>
-  <div class="small_title">
+   </div>
+   <div class="push">
+    <input type="submit" value="ログイン" class="who">
+   </div>
+   <div class="small_title">
     <small>Atte,inc</small>
-  </div>
-</body>
-
+   </div>
+  </form>
 </html>
