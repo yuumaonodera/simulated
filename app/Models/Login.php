@@ -9,5 +9,5 @@ class Login extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['attempt'];
+    protected $fillable = [];
 }

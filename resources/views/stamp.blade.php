@@ -48,45 +48,26 @@
       margin-top:30px;
       margin-bottom:30px;
     }
-    .button-small-1 {
+    .end {
       width:400px;
       height:200px;
-      font-size:20px;
-      font-weight:bold;
-      border:none;
-      background-color:white;
-      margin-left:320px;
+      margin-left:30px;
     }
-    .button-small-2 {
+    .start {
       width:400px;
       height:200px;
-      font-size:20px;
-      font-weight:bold;
-      border:none;
-      background-color:white;
-      margin-left:50px;
+      margin-left:21%;
     }
-    .button-small-3 {
+    .breaktime_start {
       width:400px;
       height:200px;
-      font-size:20px;
-      font-weight:bold;
-      border:none;
-      background-color:white;
-      margin-left:320px;
+      margin-left:21%;
+      margin-top:30px;
     }
-    .button-two {
-      margin-top:40px;
-      margin-bottom:12%;
-    }
-    .button-small-4 {
+    .breaktime_end {
       width:400px;
       height:200px;
-      font-size:20px;
-      font-weight:bold;
-      border:none;
-      background-color:white;
-      margin-left:48px;
+      margin-left:26px;
     }
   </style>
   <div class="title">
@@ -100,14 +81,16 @@
   <div class="name">
     <h2>さんお疲れ様です。</h2>
   </div>
-  <div class="button-one">
-      <button class="button-small-1">勤務開始</button>
-      <button class="button-small-2">勤務終了</button>
-  </div>
-  <div class="button-two">
-    <button class="button-small-3">休憩開始</button>
-    <button class="button-small-4">休憩終了</button>
-  </div>
+  <form action="/date" method="POST">
+   <div class="button-one">
+      <input type="submit" value="勤務開始" class="start">
+      <input type="submit" value="勤務終了" class="end">
+   </div>
+   <div class="button-two">
+     <input type="submit" value="休憩開始" class="breaktime_start">
+     <input type="submit" value="休憩終了" class="breaktime_end">
+   </div>
+  </form>
   <div class="small_title">
    <small>Atte,inc</small>
   </div>

@@ -101,7 +101,7 @@
      <input type="text" name="check" placeholder="確認用パスワード" size="45px">
    </div>
    <div class="register">
-     <input type="submit" value="送信">
+     <input type="submit" value="会員登録">
    </div>
    <div class="small">
      <p>アカウントをお持ちの方はこちらから</p>

@@ -24,6 +24,7 @@
     .small_title {
       background-color:white;
       text-align:center;
+      margin-top:184px;
     }
     p {
       margin:0px;
@@ -44,6 +45,7 @@
       text-align:center;
       font-size:13px;
       margin-top:9px;
+      margin-bottom:0px;
     }
     .register {
       text-align:center;
@@ -56,7 +58,10 @@
     .who{
       text-align:center;
       width:350px;
-      margin-left:38.5%;
+      background-color:blue;
+      color:white;
+      margin-top:20px;
+      margin-bottom:250px;
     }
     .hu {
       text-decoration:none;
@@ -72,6 +77,9 @@
       text-align:center;
     }
     .login {
+      text-align:center;
+    }
+    .push {
       text-align:center;
     }
   </style>
