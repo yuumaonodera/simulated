@@ -15,7 +15,7 @@ class CreateAttendacesTable extends Migration
     {
         Schema::create('attendaces', function (Blueprint $table) {
             $table->id();
-            $table->foreignld('user_id')->condtrained();
+            $table->integer('user_id');
             $table->datetime('start_time')->nullable();
             $table->datetime('end_time')->nullable();
         });

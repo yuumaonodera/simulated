@@ -38,6 +38,5 @@ Route::get('/login', function () {
     return view('login');
 })->middleware(['auth'])->name('login');
 
-require __DIR__.'/auth.php';
 
 

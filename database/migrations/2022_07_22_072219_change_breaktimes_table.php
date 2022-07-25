@@ -14,10 +14,8 @@ class ChangeBreaktimesTable extends Migration
     public function up()
     {
         Schema::table('breaktimes', function (Blueprint $table) {
-            $table->foreignld('user_id')->constrained();
-            $table->foreignld('attendaces_id')->constrained();
-            $table->dateTime('start_time')->nullble();
-            $table->dateTime('end_time')->nullble();
+            $table->foreignId('user_id')->constrained();
+            $table->foreignId('attendaces_id')->constrained();
         });
     }
 
