@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Stamp;
+use App\Models\Attendaces;
 use Illuminate\Http\Request;
 
 class StampController extends Controller

@@ -23,6 +23,7 @@ Route::get('/', function () {
 
 Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'create']);
+Route::get('/login', [AuthorController::class,'check']);
 Route::post('/login', [LoginController::class, 'checkUser']);
 
 Route::get('/register', [RegisterController::class, 'index']);

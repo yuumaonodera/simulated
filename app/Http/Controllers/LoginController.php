@@ -2,29 +2,35 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Login;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
     public function index()
     {
-        $item = Login::all();
-        $param = ['item' => $item];
-        return view('/login', $param);
+        return view('/login');
     }
     public function create(Request $request)
     {
         $form = $request->all();
-        Login::create($form);
         return redirect('/login');
+    }
+    public function check(Request $request)
+    {
+    $text = ['text' => 'ログインして下さい。'];
+    return view('auth', $text);
     }
     public function checkUser(Request $request)
     {
-        $name = $request->name;
         $email = $request->email;
         $password = $request->password;
-        $check = $request->check;
-        return view('/login');
+        $is_use = User::attempt(['email'=> $email, 'password' => $password]);
+        if ($is_use) {
+            $text = User::user()->name. 'さんがログインしました';
+        } else {
+            $text = 'ログインに失敗しました';
+        }
+        return view('/login', ['text'=> $text]);
     }
 }

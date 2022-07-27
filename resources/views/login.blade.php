@@ -86,7 +86,7 @@
   <div class="title">
     <h1>Atte</h1>
   </div>
-  <form action="/stamp" method="POST">
+  <form action="{ route('LoginController@checkUser')}" method="POST">
     @csrf
     <div class="subtitle">
       <h3>ログイン</h3>
@@ -98,7 +98,7 @@
       <input type="text" name="password" placeholder="パスワード" size="45px">
    </div>
    <div class="no">
-    <h4>アカウントをお持ちでない方はこちらから</h4>
+    <h4>アカウントをお持ちでない方はこちらからお願い</h4>
    </div>
    <div class="login">
     <a href="/register">会員登録</a>
