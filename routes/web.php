@@ -34,9 +34,8 @@ Route::post('/stamp', [StampController::class, 'create']);
 Route::get('/date', [DateController::class, 'index']);
 Route::post('/date', [DateController::class, 'create']);
 
-Route::get('/login', function () {
-    return view('login');
-})->middleware(['auth'])->name('login');
 
+
+ 
 
 

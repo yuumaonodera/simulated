@@ -14,8 +14,6 @@ class ChangeBreaktimesTable extends Migration
     public function up()
     {
         Schema::table('breaktimes', function (Blueprint $table) {
-            $table->foreignId('user_id')->constrained();
-            $table->foreignId('attendaces_id')->constrained();
         });
     }
 

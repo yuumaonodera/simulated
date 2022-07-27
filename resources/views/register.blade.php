@@ -47,6 +47,9 @@
       text-align:center;
       margin-top:18px;
     }
+    .nou {
+      width:350px;
+    }
     .small {
       text-align:center;
       font-size:13px;
@@ -101,7 +104,7 @@
      <input type="text" name="check" placeholder="確認用パスワード" size="45px">
    </div>
    <div class="register">
-     <input type="submit" value="会員登録">
+     <input type="submit" value="会員登録" class="nou">
    </div>
    <div class="small">
      <p>アカウントをお持ちの方はこちらから</p>

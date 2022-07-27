@@ -25,6 +25,6 @@ class LoginController extends Controller
         $email = $request->email;
         $password = $request->password;
         $check = $request->check;
-        return view('login');
+        return view('/login');
     }
 }

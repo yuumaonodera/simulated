@@ -14,7 +14,6 @@ class ChangeAttendacesTable extends Migration
     public function up()
     {
         Schema::table('attendaces', function (Blueprint $table) {
-                     $table->foreignId('user_id')->constrained();
         });
     }
 
