@@ -86,7 +86,7 @@
   <div class="title">
     <h1>Atte</h1>
   </div>
-  <form action="{ route('LoginController@checkUser')}" method="POST">
+  <form action="{ action('LoginController@checkUser')}" method="POST">
     @csrf
     <div class="subtitle">
       <h3>ログイン</h3>
