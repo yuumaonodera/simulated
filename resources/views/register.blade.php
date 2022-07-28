@@ -89,7 +89,7 @@
   <div class="sub-title">
     <h2>会員登録</h2>
   </div>
-  <form action="/login" method="POST">
+  <form action="/register" method="POST">
     @csrf
    <div class="name">
      <input type="text" placeholder="名前" name="name" size="45px">

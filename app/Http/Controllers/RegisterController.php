@@ -14,6 +14,7 @@ class RegisterController extends Controller
     public function create(Request $request)
     {
         $form = $request->all();
+        User::create($form);
         return redirect('/register');
     }
 }
