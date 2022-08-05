@@ -81,10 +81,15 @@
   <div class="name">
     <h2>さんお疲れ様です。</h2>
   </div>
-  <form action="/date" method="POST">
    <div class="button-one">
+    <form action="/date" method="POST">
+      @csrf
       <input type="submit" value="勤務開始" class="start">
+    </form>
+    <form action="/date" method="POST">
+      @csrf
       <input type="submit" value="勤務終了" class="end">
+    </form>
    </div>
    <div class="button-two">
      <input type="submit" value="休憩開始" class="breaktime_start">
