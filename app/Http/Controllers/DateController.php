@@ -11,9 +11,8 @@ class DateController extends Controller
     {
         return view('/date');
     }
-    public function create(Request $request)
+    public function create()
     {
-        $form = $request::all();
         return redirect('/date');
     }
 }

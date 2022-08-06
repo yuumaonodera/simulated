@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Attendaces;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class StampController extends Controller
 {
@@ -19,33 +20,34 @@ class StampController extends Controller
     }
     public function punchIn()
     {
-        $user = Auth::user();
-        /**打刻は一日一回にしたい */
-        $oldDatestamp = Datestamp::where('user_id', $user->id)->latest()->first();
-        if($oldDatestamp) {
-            $oldDatestampPunchIn = new Carbon($oldDatestamp->punchIn);
-            $oldDatestampDay = $oldDatestampPunchIn->startday();
+        $user_id = Auth::id();
+        $newAttendanceDay = Carbon::today();
+        /*打刻を一日一回*/
+        $oldAttendace = Attendaces::where('user_id',$user_id)->latest()->first();
+        if( !empty($oldAttendace)) {
+            $oldAttendanceDate = $oldAttendance->date;
+            $newAttendanceDate = $newAttendance->format('Y-m-d');
+            if($oldAttendacenDate == $newAttendanceDate) {
+                return back()->with('error', '既に出勤打刻されています');
+            }
         }
-        $newDatestampDay = Carbon::today();
-        if(( $oldDatestampDay == $newDatestampDay) && (empty($oldDatestamp->punchOut))) {
-            return redirect()->back()->with('error', 'すでに出勤打刻がされています');
-        }
-        $timestamp = Datestamp::create([
-            'user_id' => $user->id,
-            'punchIn' => Carbon::now(),
+        Attendance::create([
+            'user_id' => $user_id,
+            'start_time' => Carbon::now(),
+            'date' => $newAttendanceDay
         ]);
-        return redirect()->back()->with('my_status', '出勤打刻が完了しました');
+        return back()->with('my_status', '出勤打刻が完了しました');
     }
     public function punchOut()
     {
         $user = Auth::user();
-        $timestamp = Datestamp::where('user_id', $user->id)->latest()->first();
-        if( !empty($timestamp->punchOut)) {
-            return redirect()->back()->width('error', '既に打刻されているか、出勤打刻されてません');
+        $attendance = Attendance::where('user_id', $user_id)->latest()->first();
+        if( empty($attendance) || !empty($attendance->end_time)) {
+            return back()->with('error', '既に退勤打刻されているか、出勤打刻されていません');
         }
-        $timestamp->update([
-            'punchOut' => Carbon::now()
+        $attendance->update([
+            'end_time' => Carbon::now()
         ]);
-        return redirect()->back()->with('my_status', '退勤打刻が完了しました');
+        return back()->with('my_status', '退勤打刻が完了しました');
     }
 }
