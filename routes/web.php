@@ -30,8 +30,8 @@ Route::post('/login', [LoginController::class, 'checkUser']);
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'create']);
 
-Route::get('/stamp', [StampController::class, 'index']);
-Route::post('/stamp', [StampController::class, 'create']);
+Route::get('/', [StampController::class, 'index']);
+Route::post('/', [StampController::class, 'create']);
 
 Route::get('/date', [DateController::class, 'index']);
 Route::post('/date', [DateController::class, 'create']);

@@ -95,7 +95,6 @@
      <input type="submit" value="休憩開始" class="breaktime_start">
      <input type="submit" value="休憩終了" class="breaktime_end">
    </div>
-  </form>
   <div class="small_title">
    <small>Atte,inc</small>
   </div>
