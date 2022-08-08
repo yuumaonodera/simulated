@@ -16,7 +16,7 @@ class StampController extends Controller
     public function create(Request $request)
     {
         $form = $request->all();
-        return redirect('/stamp');
+        return redirect('/');
     }
     public function punchIn()
     {

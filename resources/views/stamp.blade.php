@@ -82,11 +82,11 @@
     <h2>さんお疲れ様です。</h2>
   </div>
    <div class="button-one">
-    <form action="/date" method="POST">
+    <form action="/" method="POST">
       @csrf
       <input type="submit" value="勤務開始" class="start">
     </form>
-    <form action="/date" method="POST">
+    <form action="/" method="POST">
       @csrf
       <input type="submit" value="勤務終了" class="end">
     </form>
