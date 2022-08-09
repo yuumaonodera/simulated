@@ -11,10 +11,11 @@ class DateController extends Controller
 {
     public function index()
     {
-        return view('/date');
+        $item = Attendances::all();
+        return view('/date', ['item' => $item]);
     }
     public function create()
     {
-        return redirect('/stamp');
+        return redirect('/date');
     }
 }
