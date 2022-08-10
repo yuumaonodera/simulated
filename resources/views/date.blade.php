@@ -98,13 +98,11 @@
        <th class="breakend">勤務時間</th>
      </tr>
     </div>
-    @foreach($attendaces as $attendance)
+    @foreach($item as $attendaces)
     <tr>
-      <td class="name">小野寺優舞</td>
-      <td class="start">{{ $attendaces->start_time }}</td>
-      <td class="end">{{ $attendaces-> end_time }}</td>
-      <td class="breakstart">18:00:00</td>
-      <td class="breakend">50::00:00</td>
+      <td>ます</td>
+      <td>{{ $attendaces->start_time }}</td>
+      <td>{{ $attendaces->end_time }}</td>
     </tr>
     @endforeach
   </table>
