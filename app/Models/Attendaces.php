@@ -9,7 +9,7 @@ class Attendaces extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id', 'start_time', 'end_time'];
+    protected $fillable = ['user_id', 'start_time', 'end_time', 'date'];
 
     public function user()
     {

@@ -100,8 +100,8 @@
     </div>
     @foreach($item as $attendaces)
     <tr>
-      <td>ます</td>
-      <td>{{ $attendaces->start_time }}</td>
+      <td class="name">{{ $attendaces->user->name }}</td>
+      <td class="start">{{ $attendaces->start_time }}</td>
       <td>{{ $attendaces->end_time }}</td>
     </tr>
     @endforeach
