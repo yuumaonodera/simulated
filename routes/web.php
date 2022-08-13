@@ -34,10 +34,10 @@ Route::get('/', [StampController::class, 'index']);
 Route::post('/', [StampController::class, 'create']);
 
 Route::get('/date', [DateController::class, 'index']);
-Route::post('/date', [DateController::class, 'create']);
+//Route::post('/date', [DateController::class, 'create']);
 
-Route::get('/date/punchin', [StampController::class, 'punchIn']);
-Route::post('/date/punchout', [StampController::class, 'punchOut']);
+Route::get('/', [StampController::class, 'punchIn']);
+Route::post('/', [StampController::class, 'punchOut']);
 
 
 
