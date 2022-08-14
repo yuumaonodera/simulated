@@ -18,6 +18,7 @@ class CreateAttendacesTable extends Migration
             $table->foreignId('user_id')->constrained();
             $table->datetime('start_time')->nullable();
             $table->datetime('end_time')->nullable();
+            $table->timestamp();
         });
     }
 
