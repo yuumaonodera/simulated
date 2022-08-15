@@ -19,6 +19,7 @@ class CreateBreaktimesTable extends Migration
             $table->foreignId('attendaces_id')->constrained();
             $table->datetime('start_time')->nullable();
             $table->datetime('end_time')->nullable();
+            $table->timestamps();
         });
     }
 

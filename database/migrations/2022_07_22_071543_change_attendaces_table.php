@@ -25,7 +25,6 @@ class ChangeAttendacesTable extends Migration
     public function down()
     {
         Schema::table('attendaces', function (Blueprint $table) {
-            $table->integer('user_id');
         });
     }
 }

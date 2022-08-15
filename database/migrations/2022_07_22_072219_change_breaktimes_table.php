@@ -25,8 +25,6 @@ class ChangeBreaktimesTable extends Migration
     public function down()
     {
         Schema::table('breaktimes', function (Blueprint $table) {
-            $table->integer('user_id');
-            $table->integer('attendaces_id');
         });
     }
 }
