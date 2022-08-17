@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Attendaces;
+use App\Models\Attendances;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -23,7 +23,7 @@ class StampController extends Controller
         $user_id = Auth::id();
         $newAttendanceDay = Carbon::today();
         /*打刻を一日一回*/
-        $oldAttendace = Attendaces::where('user_id',$user_id)->latest()->first();
+        $oldAttendace = Attendances::where('user_id',$user_id)->latest()->first();
         if( !empty($oldAttendace)) {
             $oldAttendanceDate = $oldAttendance->date;
             $newAttendanceDate = $newAttendance->format('Y-m-d');
@@ -31,7 +31,7 @@ class StampController extends Controller
                 return back()->with('error', '既に出勤打刻されています');
             }
         }
-        Attendance::create([
+        Attendances::create([
             'user_id' => $user_id,
             'start_time' => Carbon::now(),
             'date' => $newAttendanceDay
