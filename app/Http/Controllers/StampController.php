@@ -23,7 +23,7 @@ class StampController extends Controller
         $user_id = Auth::id();
         $newAttendanceDay = Carbon::today();
         /*打刻を一日一回*/
-        $oldAttendace = Attendances::where('user_id',$user_id)->latest()->first();
+         $oldAttendace = Attendances::where('user_id',$user_id)->latest()->first();
         if( !empty($oldAttendace)) {
             $oldAttendanceDate = $oldAttendance->date;
             $newAttendanceDate = $newAttendance->format('Y-m-d');
