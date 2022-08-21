@@ -23,7 +23,7 @@ class StampController extends Controller
         $user_id = Auth::id();
         $newAttendanceDay = Carbon::today();
         /*打刻を一日一回*/
-         $oldAttendace = Attendances::where('user_id',$user_id)->latest()->first();
+         $oldAttendance = Attendances::where('user_id',$user_id)->latest()->first();
         if( !empty($oldAttendace)) {
             $oldAttendanceDate = $oldAttendance->date;
             $newAttendanceDate = $newAttendance->format('Y-m-d');
@@ -40,8 +40,8 @@ class StampController extends Controller
     }
     public function punchOut()
     {
-        $user = Auth::user();
-        $attendance = Attendance::where('user_id', $user_id)->latest()->first();
+        $user_id = Auth::id();
+        $attendance = Attendances::where('user_id', $user_id)->latest()->first();
         if( empty($attendance) || !empty($attendance->end_time)) {
             return back()->with('error', '既に退勤打刻されているか、出勤打刻されていません');
         }
