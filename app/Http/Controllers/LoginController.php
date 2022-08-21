@@ -28,7 +28,7 @@ class LoginController extends Controller
         $password = $request->password;
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
             $text = Auth::user()->name. 'さんがログインした';
-            return view('/stamp',['text' => $text]);
+            return view('/stamp');
         } else {
             $text = 'ログインに失敗しました';
             return view('/login', ['text' => $text]);
