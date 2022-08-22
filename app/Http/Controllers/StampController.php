@@ -36,7 +36,7 @@ class StampController extends Controller
             'start_time' => Carbon::now(),
             'date' => $newAttendanceDay
         ]);
-        return back()->with('my_status', '出勤打刻が完了しました');
+        return redirect('/date')->with('my_status', '出勤打刻が完了しました');
     }
     public function punchOut()
     {
@@ -48,6 +48,6 @@ class StampController extends Controller
         $attendance->update([
             'end_time' => Carbon::now()
         ]);
-        return back()->with('my_status', '退勤打刻が完了しました');
+        return redirect('/')->with('my_status', '退勤打刻が完了しました');
     }
 }

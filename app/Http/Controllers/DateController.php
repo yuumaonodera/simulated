@@ -12,6 +12,7 @@ class DateController extends Controller
     public function index()
     {
         $item = Attendances::all();
+        $today = Carbon::today();
         return view('/date', ['item' => $item]);
     }
     public function create()

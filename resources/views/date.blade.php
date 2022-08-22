@@ -80,15 +80,20 @@
       text-align:center;
     }
   </style>
-  <div class="title">
+  <div class="sumup">
+   <div class="title">
     <h1>Atte</h1>
     <div class="direction">
       <a href="/stamp" class="stamp">ホーム</a>
       <a href="/date" class="date">日付一覧</a>
       <a href="/login" class="login">ログアウト</a>
     </div>
-  </div>
-  <table>
+   </div>
+   <div class="date">
+     <button class="left"><<button>
+     <button class="right">></button>
+   </div>
+   <table>
     <div class="infomation">
      <tr>
        <th class="name">名前</th>
@@ -105,9 +110,10 @@
       <td>{{ $attendaces->end_time }}</td>
     </tr>
     @endforeach
-  </table>
-  <div class="small_title">
-    <small>Atte,inc</small>
+   </table>
+   <div class="small_title">
+     <small>Atte,inc</small>
+   </div>
   </div>
 </body>
 
