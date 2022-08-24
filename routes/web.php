@@ -39,6 +39,9 @@ Route::get('/date', [DateController::class, 'index']);
 Route::get('/punchIn', [StampController::class, 'punchIn']);
 Route::post('/punchOut', [StampController::class, 'punchOut']);
 
+Route::get('/startRest', [StampController::class, 'startRest']);
+Route::post('/endRest', [StampController::class, 'endRest']);
+
 
 
  

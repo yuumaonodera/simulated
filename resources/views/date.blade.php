@@ -110,6 +110,12 @@
       <td>{{ $attendaces->end_time }}</td>
     </tr>
     @endforeach
+    @foreach($rest as $breaktimes)
+    <tr>
+      <td class="reststart">{{ $breaktimes->start_time}}</td>
+      <td class="restend">{{ $breaktimes->end_time}}</td>
+    </tr>
+    @endforeach
    </table>
    <div class="small_title">
      <small>Atte,inc</small>

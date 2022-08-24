@@ -92,8 +92,14 @@
     </form>
    </div>
    <div class="button-two">
-     <input type="submit" value="休憩開始" class="breaktime_start">
-     <input type="submit" value="休憩終了" class="breaktime_end">
+    <form action="/startRest" method="GET">
+      @csrf
+      <input type="submit" value="休憩開始" class="breaktime_start">
+    </form>
+    <form action="/endRest" method="POST">
+      @csrf
+      <input type="submit" value="休憩終了" class="breaktime_end">
+    </form>
    </div>
   <div class="small_title">
    <small>Atte,inc</small>

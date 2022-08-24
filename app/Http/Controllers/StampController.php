@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Attendances;
+use App\Models\User;
+use App\Models\Breaktimes;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -21,6 +23,7 @@ class StampController extends Controller
     public function punchIn()
     {
         $user_id = Auth::id();
+        /*$name = User::name();*/
         $newAttendanceDay = Carbon::today();
         /*打刻を一日一回*/
          $oldAttendance = Attendances::where('user_id',$user_id)->latest()->first();
@@ -49,5 +52,41 @@ class StampController extends Controller
             'end_time' => Carbon::now()
         ]);
         return redirect('/')->with('my_status', '退勤打刻が完了しました');
+    }
+    public function startRest()
+    {
+        $user_id = Auth::id();
+
+        $dt = new Carbon();
+        $date = $dt->toDateString();
+
+        $attendances = Attendances::where('user_id', $user_id)->where('date', $date)->first();
+
+        $attendances_id = Attendances::all();
+
+        $dt = new Carbon();
+        $date = $dt->toDateString();
+        $start_time = $dt->toTimeString();
+
+        Breaktimes::create([
+            'attendances_id' => $attendances_id,
+            'start_time' => $start_time,
+        ]);
+        return redirect('/')->with('result', '休憩開始');
+    }
+    public function endRest()
+    {
+        $user_id = Auth::id();
+
+        $dt = new Carbon();
+
+
+        $attendances = Attendances::where('user_id', $user_id)->first();
+
+        $rest = $attendances->rests->whereNull('end_time')->first();
+
+        Breaktimes::where('id', $rest->id)->update(['end_time' => $time]);
+
+        return redirect('/')->with('result', '休憩終了');
     }
 }

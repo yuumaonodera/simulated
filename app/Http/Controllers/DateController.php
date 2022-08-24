@@ -13,7 +13,8 @@ class DateController extends Controller
     {
         $item = Attendances::all();
         $today = Carbon::today();
-        return view('/date', ['item' => $item]);
+        $rest = Breaktime::all();
+        return view('/date', ['item' => $item, 'rest' => $rest]);
     }
     public function create()
     {
