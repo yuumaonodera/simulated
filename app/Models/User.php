@@ -46,9 +46,4 @@ class User extends Authenticatable
         'email',
         'password',
     ];
-
-    public function datetime()
-    {
-        return $this->hasMany(Datetime::class);
-    }
 }
