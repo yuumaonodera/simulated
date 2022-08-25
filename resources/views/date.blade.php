@@ -108,10 +108,8 @@
       <td class="name"></td>
       <td class="start">{{ $attendaces->start_time }}</td>
       <td>{{ $attendaces->end_time }}</td>
-    </tr>
     @endforeach
     @foreach($rest as $breaktimes)
-    <tr>
       <td class="reststart">{{ $breaktimes->start_time}}</td>
       <td class="restend">{{ $breaktimes->end_time}}</td>
     </tr>

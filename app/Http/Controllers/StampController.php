@@ -62,15 +62,16 @@ class StampController extends Controller
 
         $attendances = Attendances::where('user_id', $user_id)->where('date', $date)->first();
 
-        $attendances_id = Attendances::all();
+        $attendances_id = $attendances->id;
 
         $dt = new Carbon();
         $date = $dt->toDateString();
-        $start_time = $dt->toTimeString();
+        $start_time = $dt;
 
         Breaktimes::create([
             'attendances_id' => $attendances_id,
             'start_time' => $start_time,
+            'user_id' => $user_id,
         ]);
         return redirect('/')->with('result', '休憩開始');
     }

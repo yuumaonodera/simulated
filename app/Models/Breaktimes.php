@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Breaktimes extends Model
 {
     use HasFactory;
-    protected $fillable = ['user_id', 'attendaces_id', 'start_time', 'end_time'];
+    protected $fillable = ['user_id', 'attendances_id', 'start_time', 'end_time'];
 }
