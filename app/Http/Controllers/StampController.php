@@ -84,9 +84,11 @@ class StampController extends Controller
 
         $attendances = Attendances::where('user_id', $user_id)->first();
 
-        $rest = $attendances->rests->whereNull('end_time')->first();
+        $breaktimes = Breaktimes::where('user_id', $user_id)->first();
 
-        Breaktimes::where('id', $rest->id)->update(['end_time' => $time]);
+        $rest = $breaktimes->whereNull('end_time')->first();
+
+        Breaktimes::where('id', $rest->id)->update(['end_time' => $dt]);
 
         return redirect('/')->with('result', '休憩終了');
     }

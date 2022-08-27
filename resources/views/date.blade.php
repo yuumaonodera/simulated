@@ -103,15 +103,15 @@
        <th class="breakend">勤務時間</th>
      </tr>
     </div>
-    @foreach($item as $attendaces)
+    @foreach($user_name as $user)
     <tr>
-      <td class="name"></td>
+      <td class="name">{{ $user->name }}</td>
+    @endforeach
+    @foreach($item as $attendaces)
       <td class="start">{{ $attendaces->start_time }}</td>
       <td>{{ $attendaces->end_time }}</td>
     @endforeach
     @foreach($rest as $breaktimes)
-      <td class="reststart">{{ $breaktimes->start_time}}</td>
-      <td class="restend">{{ $breaktimes->end_time}}</td>
     </tr>
     @endforeach
    </table>
