@@ -43,6 +43,9 @@
     .button-one {
       display:flex;
     }
+    .button-two {
+      display:flex;
+    }
     .name {
       text-align:center;
       margin-top:30px;
@@ -51,23 +54,18 @@
     .end {
       width:400px;
       height:200px;
-      margin-left:30px;
     }
     .start {
       width:400px;
       height:200px;
-      margin-left:21%;
     }
     .breaktime_start {
       width:400px;
       height:200px;
-      margin-left:21%;
-      margin-top:30px;
     }
     .breaktime_end {
       width:400px;
       height:200px;
-      margin-left:26px;
     }
   </style>
   <div class="title">

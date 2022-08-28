@@ -13,6 +13,7 @@ class StampController extends Controller
 {
     public function index()
     {
+        $use_name = User::all();
         return view('/stamp');
     }
     public function create(Request $request)
