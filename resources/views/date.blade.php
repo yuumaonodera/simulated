@@ -106,12 +106,17 @@
     @foreach($user_name as $user)
     <tr>
       <td class="name">{{ $user->name }}</td>
+    </tr>
     @endforeach
     @foreach($item as $attendaces)
+    <tr>
       <td class="start">{{ $attendaces->start_time }}</td>
       <td>{{ $attendaces->end_time }}</td>
+    </tr>
     @endforeach
     @foreach($rest as $breaktimes)
+    <tr>
+      <td class="totalrest">{{ $breaktimes->rest_time }}</td>
     </tr>
     @endforeach
    </table>

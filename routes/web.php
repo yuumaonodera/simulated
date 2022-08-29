@@ -42,6 +42,8 @@ Route::post('/punchOut', [StampController::class, 'punchOut']);
 Route::get('/startRest', [StampController::class, 'startRest']);
 Route::post('/endRest', [StampController::class, 'endRest']);
 
+Route::get('/totalbreak', [StampController::class, 'dateindex']);
+
 
 
  
