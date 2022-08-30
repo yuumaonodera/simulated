@@ -103,22 +103,16 @@
        <th class="breakend">勤務時間</th>
      </tr>
     </div>
-    @foreach($user_name as $user)
-    <tr>
-      <td class="name">{{ $user->name }}</td>
-    </tr>
-    @endforeach
-    @foreach($item as $attendaces)
-    <tr>
-      <td class="start">{{ $attendaces->start_time }}</td>
-      <td>{{ $attendaces->end_time }}</td>
-    </tr>
-    @endforeach
-    @foreach($rest as $breaktimes)
-    <tr>
-      <td class="totalrest">{{ $breaktimes->rest_time }}</td>
-    </tr>
-    @endforeach
+      @foreach($user_name as $user)
+        <th class="name">{{ $user->name }}</th>
+      @endforeach
+      @foreach($item as $attendaces)
+        <td class="start">{{ $attendaces->start_time }}</td>
+        <td class="end">{{ $attendaces->end_time }}</td>
+      @endforeach
+      @foreach($rest as $breaktimes)
+        <td class="totalrest">{{ $breaktimes->start_time }}</td>
+      @endforeach
    </table>
    <div class="small_title">
      <small>Atte,inc</small>
