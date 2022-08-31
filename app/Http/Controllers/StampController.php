@@ -117,7 +117,7 @@ class StampController extends Controller
             $attendance->work_time = sprintf('%02d:%02d:%02d', $work_hour, $work_minute, $work_second);
         }
         
-        return view('date'); 
+        return view('date', ['date' => $date, 'attendances' => $attendances]); 
     }
 
 }

@@ -90,11 +90,11 @@
     </form>
    </div>
    <div class="button-two">
-    <form action="/totalbreak" method="GET">
+    <form action="/startRest" method="GET">
       @csrf
       <input type="submit" value="休憩開始" class="breaktime_start">
     </form>
-    <form action="/totalbreak" method="POST">
+    <form action="/endRest" method="POST">
       @csrf
       <input type="submit" value="休憩終了" class="breaktime_end">
     </form>

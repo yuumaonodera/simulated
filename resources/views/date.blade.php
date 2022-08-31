@@ -48,31 +48,25 @@
       margin-left:160px;
     }
     .name {
-      padding-left:40px;
       padding-top:20px;
     }
     .start {
-      padding-left:170px;
       padding-top:20px;
       padding-bottom:20px;
     }
     .end {
-      padding-left:170px;
       padding-top:20px;
       padding-bottom:20px;
     }
     .breakstart{
-      padding-left:170px;
       padding-top:20px;
       padding-bottom:20px;
     }
     .breakend {
-      padding-left:170px;
       padding-top:20px;
       padding-bottom:20px;
     }
     .breakend {
-      padding-right:30px;
       padding-top:20px;
       padding-bottom:20px;
     }
@@ -104,14 +98,14 @@
      </tr>
     </div>
       @foreach($user_name as $user)
-        <th class="name">{{ $user->name }}</th>
+        <td class="name">{{ $user->name }}</td>
       @endforeach
       @foreach($item as $attendaces)
         <td class="start">{{ $attendaces->start_time }}</td>
-        <td class="end">{{ $attendaces->end_time }}</td>
+        <td class="attendancesend">{{ $attendaces->end_time }}</td>
       @endforeach
       @foreach($rest as $breaktimes)
-        <td class="totalrest">{{ $breaktimes->start_time }}</td>
+        <td class="totalrest">{{ $breaktimes->rest_time }}</td>
       @endforeach
    </table>
    <div class="small_title">
