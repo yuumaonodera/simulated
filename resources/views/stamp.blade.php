@@ -77,7 +77,7 @@
     </div>
   </div>
   <div class="name">
-    <h2>さんお疲れ様です。</h2>
+     <p><?php $user = Auth::user(); ?>{{ $user->name}}さんお疲れ様です！</p>
   </div>
    <div class="button-one">
     <form action="/punchIn" method="GET">
@@ -104,4 +104,4 @@
   </div>
 </body>
 
-</html>
+</html

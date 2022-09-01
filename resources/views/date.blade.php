@@ -84,28 +84,35 @@
     </div>
    </div>
    <div class="date">
-     <button class="left"><<button>
-     <button class="right">></button>
-   </div>
+    <form actioin="date" method="POST">
+      @csrf
+      <input type="hidden" name="date" value="{{ $item }}">
+      <input type="submit" class="date_button" name="before" value="<">
+    </form>
    <table>
     <div class="infomation">
      <tr>
-       <th class="name">名前</th>
        <th class="start">勤務開始</th>
        <th class="end">勤務終了</th>
        <th class="breakstart">休憩時間</th>
        <th class="breakend">勤務時間</th>
      </tr>
     </div>
-      @foreach($user_name as $user)
-        <td class="name">{{ $user->name }}</td>
-      @endforeach
       @foreach($item as $attendaces)
+      <tr>
         <td class="start">{{ $attendaces->start_time }}</td>
         <td class="attendancesend">{{ $attendaces->end_time }}</td>
+      </tr>
       @endforeach
-      @foreach($rest as $breaktimes)
-        <td class="totalrest">{{ $breaktimes->rest_time }}</td>
+      @foreach($rests as $breaktime)
+      <tr>
+       <td>{{strtotime($breaktime->end_time) - strtotime($breaktime->start_time)}}</td>
+      </tr>
+      @endforeach
+      @foreach($item as $attendances)
+      <tr>
+        <td>{{strtotime($attendances->end_time) - strtotime($attendances->start_time)}}</td>
+      </tr>
       @endforeach
    </table>
    <div class="small_title">

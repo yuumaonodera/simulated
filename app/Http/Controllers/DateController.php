@@ -15,8 +15,12 @@ class DateController extends Controller
         $user_name = User::all();
         $item = Attendances::all();
         $today = Carbon::today();
-        $rest = Breaktimes::all();
-        return view('/date', ['user_name' => $user_name ,'item' => $item, 'rest' => $rest]);
+        $rests = Breaktimes::all();
+        /*$restin = Breaktimes::start_time();
+        $restend = Breaktimes::end_time();
+        $totalrest = $restend - $restin;*/
+        
+        return view('/date', ['user_name' => $user_name ,'item' => $item, 'rests' => $rests]);
     }
     public function create()
     {

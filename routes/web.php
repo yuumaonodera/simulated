@@ -17,7 +17,7 @@ use App\Http\Controllers\DateController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/login', function () {
     return view('welcome');
 });
 

@@ -13,7 +13,8 @@ class StampController extends Controller
 {
     public function index()
     {
-        return view('/stamp');
+        $user_name = User::all();
+        return view('/stamp', ['user_name' => $user_name]);
     }
     public function create(Request $request)
     {
@@ -92,16 +93,16 @@ class StampController extends Controller
 
         return redirect('/')->with('result', '休憩終了');
     }
-     public function dateindex(Request $request)
+    public function dateindex(Request $request)
     {
         $date = $request->input("date")?: Carbon::today()->format("Y-m-d");
         $attendances = Attendances::whereDate('date', $date)->paginate(5);
         foreach ($attendances as $attendance) {
-            $rests = $attendance->rests;
+            $rests = $attendance->breaktimes;
             $total_rest_time = 0;
-            /*foreach ($rests as $rest) {
-                $total_rest_time = $total_rest_time + strtotime($rest->rest_out) - strtotime($rest->rest_in); 
-            }*/
+            foreach ($rests as $rest) {
+                $total_rest_time = $total_rest_time + strtotime($rest->end_time) - strtotime($rest->start_time); 
+            }
 
             $rest_hour = floor($total_rest_time / 3600);
             $rest_minute = floor(($total_rest_time / 60) % 60);
@@ -117,7 +118,7 @@ class StampController extends Controller
             $attendance->work_time = sprintf('%02d:%02d:%02d', $work_hour, $work_minute, $work_second);
         }
         
-        return view('date', ['date' => $date, 'attendances' => $attendances]); 
+        return view('/date', ['date' => $date, 'attendances' => $attendances]); 
     }
 
 }
