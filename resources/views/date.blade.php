@@ -51,6 +51,7 @@
       padding-top:20px;
     }
     .start {
+      padding-left:30px;
       padding-top:20px;
       padding-bottom:20px;
     }
@@ -72,6 +73,20 @@
     }
     .small_title {
       text-align:center;
+    }
+    .attendancesend {
+      padding-left:30px;
+      font-size:13px;
+      font-weight:bolder;
+      padding-top:15px;
+      padding-bottom:15px;
+    }
+    .attendancesstart{
+      padding-left:30px;
+      font-size:13px;
+      font-weight:bolder;
+      padding-top:15px;
+      padding-bottom:15px;
     }
   </style>
   <div class="sumup">
@@ -100,18 +115,11 @@
     </div>
       @foreach($item as $attendaces)
       <tr>
-        <td class="start">{{ $attendaces->start_time }}</td>
+        <td class="attendancesstart">{{ $attendaces->start_time }}</td>
         <td class="attendancesend">{{ $attendaces->end_time }}</td>
-      </tr>
-      @endforeach
-      @foreach($rests as $breaktime)
-      <tr>
-       <td>{{strtotime($breaktime->end_time) - strtotime($breaktime->start_time)}}</td>
-      </tr>
-      @endforeach
-      @foreach($item as $attendances)
-      <tr>
-        <td>{{strtotime($attendances->end_time) - strtotime($attendances->start_time)}}</td>
+        @foreach($rests as  $break)
+         <td class="totalbreak">{{$break->rest_time}}</td>
+         @endforeach
       </tr>
       @endforeach
    </table>
