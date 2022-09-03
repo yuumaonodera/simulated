@@ -44,6 +44,8 @@ Route::post('/endRest', [StampController::class, 'endRest']);
 
 Route::get('/totalbreak', [StampController::class, 'dateindex']);
 
+Route::get('/stamp', [StampController::class, 'index']);
+
 
 
  

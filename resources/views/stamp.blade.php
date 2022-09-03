@@ -54,18 +54,22 @@
     .end {
       width:400px;
       height:200px;
+      margin-left:100px;
     }
     .start {
       width:400px;
       height:200px;
+      margin-left:300px;
     }
     .breaktime_start {
       width:400px;
       height:200px;
+      margin-left:300px;
     }
     .breaktime_end {
       width:400px;
       height:200px;
+      margin-left:100px;
     }
   </style>
   <div class="title">
@@ -77,7 +81,7 @@
     </div>
   </div>
   <div class="name">
-     <p><?php $user = Auth::user(); ?>{{ $user->name}}さんお疲れ様です！</p>
+     <h2><?php $user = Auth::user(); ?>{{ $user->name}}さんお疲れ様です</h2>
   </div>
    <div class="button-one">
     <form action="/punchIn" method="GET">
