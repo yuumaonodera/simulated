@@ -58,14 +58,17 @@
     .end {
       padding-top:20px;
       padding-bottom:20px;
+      padding-left:60px;
     }
     .breakstart{
       padding-top:20px;
       padding-bottom:20px;
+      padding-left:30px;
     }
     .breakend {
       padding-top:20px;
       padding-bottom:20px;
+      padding-left:60px;
     }
     .breakend {
       padding-top:20px;
@@ -87,6 +90,9 @@
       font-weight:bolder;
       padding-top:15px;
       padding-bottom:15px;
+    }
+    .totalbreak {
+
     }
   </style>
   <div class="sumup">
@@ -117,11 +123,11 @@
       <tr>
         <td class="attendancesstart">{{ $attendaces->start_time }}</td>
         <td class="attendancesend">{{ $attendaces->end_time }}</td>
-        @foreach($rests as  $break)
-         <td class="totalbreak">{{$break->rest_time}}</td>
-         @endforeach
-      </tr>
       @endforeach
+      @foreach($rests as  $rest)
+         <td class="totalbreak">{{ $rest->total_rest_time }}</td>
+      @endforeach
+      </tr>
    </table>
    <div class="small_title">
      <small>Atte,inc</small>

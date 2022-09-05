@@ -19,7 +19,6 @@ class DateController extends Controller
         $date = $request->input("date")?: Carbon::today()->format("Y-m-d");
         $attendances = Attendances::whereDate('date', $date)->paginate(5);
         foreach ($attendances as $attendance) {
-            $rests = $attendance->breaktimes;
             $total_rest_time = 0;
             foreach ($rests as $rest) {
                 $total_rest_time = $total_rest_time + strtotime($rest->end_time) - strtotime($rest->start_time); 
@@ -40,7 +39,7 @@ class DateController extends Controller
         }
         
         
-        return view('/date', ['user_name' => $user_name ,'item' => $item, 'rests' => $rests]);
+        return view('/date', ['user_name' => $user_name ,'item' => $item, 'rests' => $rests, 'total_rest_time' => $total_rest_time]);
     }
     public function create()
     {

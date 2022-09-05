@@ -60,6 +60,7 @@
       width:400px;
       height:200px;
       margin-left:300px;
+      margin-bottom:50px;
     }
     .breaktime_start {
       width:400px;
