@@ -91,9 +91,6 @@
       padding-top:15px;
       padding-bottom:15px;
     }
-    .totalbreak {
-
-    }
   </style>
   <div class="sumup">
    <div class="title">
